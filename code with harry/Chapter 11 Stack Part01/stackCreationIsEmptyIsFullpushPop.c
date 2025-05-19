@@ -54,8 +54,28 @@ int pop(stack * a){
     }
 }
 
-int peak(stack * a, int position){
+void peakFromBottom(stack * a, int position){
+    printf("the %dth element from the bottom is %d\n", position, a->arr[position-1]);
     
+}
+
+void peakFromAbove(stack * a, int position){
+    printf("the %dth element from the top is %d\n", position, a->arr[a->top+1-position]);
+    
+}
+
+void peak(stack* a){
+    if(!isEmpty(a)){
+        printf("The elements in the stack are : ");
+        for(int i = a->top; i>=0; i--){
+            printf("%d ", a->arr[i]);
+        }
+        printf("\n");
+    }
+
+    else{
+        printf("Stack is empty");
+    }
 }
 
 int main()
@@ -83,5 +103,10 @@ int main()
     printf("%d\n", pop(s1));
     push(s1, 63);
     printf("%d\n", pop(s1));
+    push(s1, 572);
+    peak(s1);
+    
+    peakFromAbove(s1,3);
+    peakFromBottom(s1, 3);
     return 0;
 }
