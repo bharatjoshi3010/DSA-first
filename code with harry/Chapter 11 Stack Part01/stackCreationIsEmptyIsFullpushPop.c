@@ -56,14 +56,20 @@ int pop(stack * a){
 
 //it starts cuonting of the elements from the bottom
 void peakFromBottom(stack * a, int position){
+    if(position > a->top && position <= 0){
+        printf("invalid position");
+    }else{
     printf("the %dth element from the bottom is %d\n", position, a->arr[position-1]);
-    
+    }
 }
 
 //it starts counting the elements from above
 void peakFromAbove(stack * a, int position){
+    if(position > a->top && position <= 0){
+        printf("invalid position");
+    }else{
     printf("the %dth element from the top is %d\n", position, a->arr[a->top+1-position]);
-    
+    }
 }
 
 //it starts printing from above to below
