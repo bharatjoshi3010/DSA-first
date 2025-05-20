@@ -7,6 +7,7 @@ typedef struct stack
     int size;
     int *arr;
 }stack;
+
 int isEmpty(stack *a){
     if(a->top == -1){
         return 1;
